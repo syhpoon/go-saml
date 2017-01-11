@@ -4,8 +4,8 @@ import (
 	"encoding/xml"
 	"testing"
 
-	"github.com/bmanth60/go-saml/util"
 	"github.com/stretchr/testify/assert"
+	"github.com/syhpoon/go-saml/util"
 )
 
 func TestRequest(t *testing.T) {
