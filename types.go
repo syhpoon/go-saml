@@ -13,10 +13,7 @@ type AuthnRequest struct {
 	AssertionConsumerServiceURL    string                 `xml:"AssertionConsumerServiceURL,attr"`
 	Destination                    string                 `xml:"Destination,attr"`
 	IssueInstant                   string                 `xml:"IssueInstant,attr"`
-	AssertionConsumerServiceIndex  int                    `xml:"AssertionConsumerServiceIndex,attr"`
-	AttributeConsumingServiceIndex int                    `xml:"AttributeConsumingServiceIndex,attr"`
 	Issuer                         Issuer                 `xml:"Issuer"`
-	NameIDPolicy                   NameIDPolicy           `xml:"NameIDPolicy"`
 	RequestedAuthnContext          *RequestedAuthnContext `xml:"RequestedAuthnContext,omitempty"`
 	Signature                      *Signature             `xml:"Signature,omitempty"`
 	originalString                 string
@@ -26,12 +23,6 @@ type Issuer struct {
 	XMLName xml.Name
 	SAML    string `xml:"xmlns:saml,attr"`
 	Url     string `xml:",innerxml"`
-}
-
-type NameIDPolicy struct {
-	XMLName     xml.Name
-	AllowCreate bool   `xml:"AllowCreate,attr"`
-	Format      string `xml:"Format,attr"`
 }
 
 type RequestedAuthnContext struct {
