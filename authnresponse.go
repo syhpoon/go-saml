@@ -46,7 +46,7 @@ func ParseEncodedResponse(b64ResponseXML string) (*Response, error) {
 	return &response, nil
 }
 
-func (r *Response) Validate(s *ServiceProviderSettings) error {
+func (r *Response) Validate(s *ServiceProviderSettings, now time.Time) error {
 	if r.Version != "2.0" {
 		return errors.New("unsupported SAML Version")
 	}
@@ -86,7 +86,7 @@ func (r *Response) Validate(s *ServiceProviderSettings) error {
 	if e != nil {
 		return e
 	}
-	if notOnOrAfter.Before(time.Now()) {
+	if notOnOrAfter.Before(now) {
 		return errors.New("assertion has expired on: " + expires)
 	}
 

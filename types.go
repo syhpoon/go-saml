@@ -3,20 +3,20 @@ package saml
 import "encoding/xml"
 
 type AuthnRequest struct {
-	XMLName                        xml.Name
-	SAMLP                          string                 `xml:"xmlns:samlp,attr"`
-	SAML                           string                 `xml:"xmlns:saml,attr"`
-	SAMLSIG                        string                 `xml:"xmlns:samlsig,attr,omitempty"`
-	ID                             string                 `xml:"ID,attr"`
-	Version                        string                 `xml:"Version,attr"`
-	ProtocolBinding                string                 `xml:"ProtocolBinding,attr"`
-	AssertionConsumerServiceURL    string                 `xml:"AssertionConsumerServiceURL,attr"`
-	Destination                    string                 `xml:"Destination,attr"`
-	IssueInstant                   string                 `xml:"IssueInstant,attr"`
-	Issuer                         Issuer                 `xml:"Issuer"`
-	RequestedAuthnContext          *RequestedAuthnContext `xml:"RequestedAuthnContext,omitempty"`
-	Signature                      *Signature             `xml:"Signature,omitempty"`
-	originalString                 string
+	XMLName                     xml.Name
+	SAMLP                       string                 `xml:"xmlns:samlp,attr"`
+	SAML                        string                 `xml:"xmlns:saml,attr"`
+	SAMLSIG                     string                 `xml:"xmlns:samlsig,attr,omitempty"`
+	ID                          string                 `xml:"ID,attr"`
+	Version                     string                 `xml:"Version,attr"`
+	ProtocolBinding             string                 `xml:"ProtocolBinding,attr"`
+	AssertionConsumerServiceURL string                 `xml:"AssertionConsumerServiceURL,attr"`
+	Destination                 string                 `xml:"Destination,attr"`
+	IssueInstant                string                 `xml:"IssueInstant,attr"`
+	Issuer                      Issuer                 `xml:"Issuer"`
+	RequestedAuthnContext       *RequestedAuthnContext `xml:"RequestedAuthnContext,omitempty"`
+	Signature                   *Signature             `xml:"Signature,omitempty"`
+	originalString              string
 }
 
 type Issuer struct {
